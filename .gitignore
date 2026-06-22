@@ -1,0 +1,35 @@
+# ─────────────────────────────────────────────
+# SGES — Smart Group Expense Splitter
+# Root-level .gitignore
+# ─────────────────────────────────────────────
+
+# Root node_modules (concurrently etc.)
+node_modules/
+package-lock.json
+
+# Environment files — NEVER commit secrets!
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

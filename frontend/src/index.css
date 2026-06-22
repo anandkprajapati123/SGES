@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50 text-slate-900 transition-colors duration-300 min-h-screen antialiased;
+  }
+  
+  body.dark {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+/* Custom Scrollbar for modern look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700 transition-all;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-md border border-white/20 dark:border-slate-800/40 shadow-xl shadow-slate-100/50 dark:shadow-none;
+}
+
+.glass-panel-hover {
+  @apply transition-all duration-300 hover:shadow-2xl hover:border-white/40 dark:hover:border-slate-700/60 hover:translate-y-[-2px];
+}
+
+.glass-input {
+  @apply bg-white/50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
+}
+
+/* Custom card gradients */
+.gradient-primary {
+  @apply bg-gradient-to-r from-violet-600 to-indigo-600 dark:from-violet-500 dark:to-indigo-500 text-white;
+}
+
+.gradient-success {
+  @apply bg-gradient-to-r from-emerald-500 to-teal-500 dark:from-emerald-400 dark:to-teal-400 text-white;
+}
+
+.gradient-warning {
+  @apply bg-gradient-to-r from-amber-500 to-orange-500 dark:from-amber-400 dark:to-orange-400 text-white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.pulse-hover:hover {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
